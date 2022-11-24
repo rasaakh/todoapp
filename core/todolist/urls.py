@@ -7,7 +7,7 @@ from .views import (
     TaskUpdate,
     DeleteView,
 )
-
+app_name = "todolist"
 urlpatterns = [
     path("", TaskList.as_view(), name="task_list"),
     path("create/", TaskCreate.as_view(), name="create_task"),

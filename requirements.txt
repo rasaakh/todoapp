@@ -1,5 +1,6 @@
 Django>=3.2,<3.3
 python-decouple
+
 Pillow
 djangorestframework
 markdown       
@@ -10,3 +11,5 @@ djangorestframework-simplejwt
 django-mail-templated
 djoser
 dj-rest-auth
+pytest
+pytest-django
