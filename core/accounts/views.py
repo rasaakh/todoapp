@@ -4,15 +4,17 @@ from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
 from django.contrib.auth import login
 from django.shortcuts import redirect
-
-
+from django.utils.translation import ugettext, ugettext_lazy as _
+from django import forms
 from django.db.models.query_utils import Q
-
+from accounts.models import User
 
 from django.shortcuts import redirect
 
 # Create your views here.
+# from django.contrib.auth import get_user_model
 
+# User = get_user_model()
 
 class CustomLoginView(LoginView):
     template_name = "accounts/login.html"
@@ -22,6 +24,10 @@ class CustomLoginView(LoginView):
     def get_success_url(self):
         return reverse_lazy("task_list")
 
+    
+    class Meta:
+        model = User
+    
 
 class RegisterPage(FormView):
     template_name = "accounts/register.html"
@@ -30,6 +36,11 @@ class RegisterPage(FormView):
     redirect_authenticated_user = True
     success_url = reverse_lazy("task_list")
 
+    class Meta:
+        model = User
+        # fields = ("email", "password1", "password2")
+    
+    
     def form_valid(self, form):
         user = form.save()
         if user is not None:
@@ -40,4 +51,6 @@ class RegisterPage(FormView):
         if self.request.user.is_authenticated:
             return redirect("task_list")
         return super(RegisterPage, self).get(*args, **kwargs)
+
+
 
