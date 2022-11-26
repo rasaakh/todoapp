@@ -35,13 +35,11 @@ class TestTasktApi:
         response = api_client.post(url, data)
         assert response.status_code == 403
 
-
     def test_create_task_response_201_status(self, api_client, common_user):
         url = reverse("todolist:api-v1:task-list")
         data = {
             "title": "test",
-         
-             "created_date": datetime.now(),
+            "created_date": datetime.now(),
         }
         user = common_user
         api_client.force_authenticate(user=user)
@@ -52,7 +50,7 @@ class TestTasktApi:
         self, api_client, common_user
     ):
         url = reverse("todolist:api-v1:task-list")
-        data = {"invalid": "test" }
+        data = {"invalid": "test"}
         user = common_user
 
         api_client.force_authenticate(user=user)

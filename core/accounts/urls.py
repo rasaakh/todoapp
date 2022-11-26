@@ -1,7 +1,4 @@
-from django.urls import path,include
-from .views import CustomLoginView, RegisterPage
-from . import views
-from django.contrib.auth.views import LogoutView
+from django.urls import path, include
 
 app_name = "accounts"
 
@@ -13,4 +10,3 @@ urlpatterns = [
     path("api/v1/", include("accounts.api.v1.urls")),
     path("api/v2/", include("djoser.urls")),
 ]
-   

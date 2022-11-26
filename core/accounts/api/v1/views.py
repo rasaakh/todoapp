@@ -68,9 +68,7 @@ class CustomAuthToken(ObtainAuthToken):
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data["user"]
         token, created = Token.objects.get_or_create(user=user)
-        return Response(
-            {"token": token.key, "user_id": user.pk, "email": user.email}
-        )
+        return Response({"token": token.key, "user_id": user.pk, "email": user.email})
 
 
 class CustomDiscardAuthToken(APIView):
@@ -100,9 +98,7 @@ class ChangPasswordApiview(generics.GenericAPIView):
 
         if serializer.is_valid():
             # Check old password
-            if not self.object.check_password(
-                serializer.data.get("old_password")
-            ):
+            if not self.object.check_password(serializer.data.get("old_password")):
                 return Response(
                     {"old_password": ["Wrong password."]},
                     status=status.HTTP_400_BAD_REQUEST,
@@ -128,25 +124,24 @@ class ProfileApiView(generics.RetrieveUpdateAPIView):
         obj = get_object_or_404(queryset, user=self.request.user)
         return obj
 
+    # class TestEmailSend(APIView):
 
-# class TestEmailSend(APIView):
-    
-#     def get(self, request, *args, **kwargs):
-#         self.email = "a1@k1.com"
-#         user_obj = get_object_or_404(User, email=self.email)
-#         token = self.get_tokens_for_user(user_obj)
-#         email_obj = EmailMessage(
-#             "email/hello.tpl",
-#             {"token": token},
-#             "as_akh@yahoo.com",
-#             to=[self.email],
-#         )
-#         # TODO: Add more useful commands here.
-#         print('email_obj')
-#         email_obj.send()
-#         # EmailThread(email_obj).start()
+    #     def get(self, request, *args, **kwargs):
+    #         self.email = "a1@k1.com"
+    #         user_obj = get_object_or_404(User, email=self.email)
+    #         token = self.get_tokens_for_user(user_obj)
+    #         email_obj = EmailMessage(
+    #             "email/hello.tpl",
+    #             {"token": token},
+    #             "as_akh@yahoo.com",
+    #             to=[self.email],
+    #         )
+    #         # TODO: Add more useful commands here.
+    #         print('email_obj')
+    #         email_obj.send()
+    #         # EmailThread(email_obj).start()
 
-#         return Response("email send")
+    #         return Response("email send")
 
     def get_tokens_for_user(self, user):
         refresh = RefreshToken.for_user(user)
@@ -156,9 +151,7 @@ class ProfileApiView(generics.RetrieveUpdateAPIView):
 class ActivationApiview(APIView):
     def get(self, request, token, *args, **kwargs):
         try:
-            token = jwt.decode(
-                token, settings.SECRET_KEY, algorithms=["HS256"]
-            )
+            token = jwt.decode(token, settings.SECRET_KEY, algorithms=["HS256"])
             user_id = token.get("user_id")
         except ExpiredSignatureError:
             return Response(

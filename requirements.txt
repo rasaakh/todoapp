@@ -10,6 +10,9 @@ drf-yasg[validation]
 djangorestframework-simplejwt
 django-mail-templated
 djoser
+black
+flake8-django
+flake8
 dj-rest-auth
 pytest
 pytest-django

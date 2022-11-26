@@ -5,9 +5,9 @@ User = get_user_model()
 
 
 class SignUpForm(UserCreationForm):
-#profile_year        = blaaa blaa blaaa irrelevant.. You have your own stuff here don't worry about it
+    # profile_year        = blaaa blaa blaaa irrelevant.. You have your own stuff here don't worry about it
 
-   # here is the important part.. add a class Meta-
-   class Meta:
-      model = User 
-      fields = ('username', 'password1', 'password2')
+    # here is the important part.. add a class Meta-
+    class Meta:
+        model = User
+        fields = ("username", "password1", "password2")

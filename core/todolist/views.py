@@ -14,7 +14,8 @@ from django.views import View
 
 from .models import Task
 
-class TaskList(LoginRequiredMixin,ListView):
+
+class TaskList(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = "tasks"
     template_name = "base.html"
@@ -23,7 +24,7 @@ class TaskList(LoginRequiredMixin,ListView):
         return self.model.objects.filter(user=self.request.user)
 
 
-class TaskCreate(LoginRequiredMixin,CreateView):
+class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
     fields = ["title"]
     success_url = reverse_lazy("task_list")
@@ -33,25 +34,21 @@ class TaskCreate(LoginRequiredMixin,CreateView):
         return super(TaskCreate, self).form_valid(form)
 
 
-
-class TaskUpdate(LoginRequiredMixin,UpdateView):
+class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
     success_url = reverse_lazy("task_list")
     form_class = TaskUpdateForm
-    
+
     template_name = "todo/update_task.html"
 
 
-
-
-
-class TaskComplete(LoginRequiredMixin,View):
+class TaskComplete(LoginRequiredMixin, View):
     model = Task
     success_url = reverse_lazy("task_list")
 
     def get(self, request, *args, **kwargs):
         object = Task.objects.get(id=kwargs.get("pk"))
-        if object.complete == True:
+        if object.complete is True:
             object.complete = False
         else:
             object.complete = True
@@ -59,10 +56,7 @@ class TaskComplete(LoginRequiredMixin,View):
         return redirect(self.success_url)
 
 
-
-
-
-class DeleteView(LoginRequiredMixin,DeleteView):
+class DeleteView(LoginRequiredMixin, DeleteView):
     model = Task
     context_object_name = "task"
     success_url = reverse_lazy("task_list")
