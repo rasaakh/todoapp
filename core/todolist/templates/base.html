@@ -12,7 +12,7 @@
         <div style="margin-top: 50px;" class="ui container">
             <h1 class="ui center aligned header">Django ToDo App</h1>
            
-            <form class="ui form" action="{% url 'create_task' %}" method="post">
+            <form class="ui form" action="{% url 'todolist:create_task' %}" method="post">
                 {% csrf_token %}
                 <div class="field">
                     <label>Todo Title</label>

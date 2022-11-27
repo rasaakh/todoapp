@@ -16,3 +16,4 @@ flake8
 dj-rest-auth
 pytest
 pytest-django
+Faker
