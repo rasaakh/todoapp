@@ -1,13 +1,8 @@
 from django.core.management.base import BaseCommand
-
 from faker import Faker
-import random
 from datetime import datetime
-
 from accounts.models import User, Profile
 from todolist.models import Task
-
-
 
 
 class Command(BaseCommand):
@@ -24,12 +19,9 @@ class Command(BaseCommand):
         profile.last_name = self.fake.last_name()
         profile.description = self.fake.paragraph(nb_sentences=5)
         profile.save()
-
-      
         for _ in range(10):
-           Task.objects.create(
+            Task.objects.create(
                 user_id=user.id,
                 title=self.fake.paragraph(nb_sentences=1),
-                
-                 created_date=datetime.now(),
+                created_date=datetime.now(),
             )
