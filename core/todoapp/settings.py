@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "drf_yasg",
     "mail_templated",
     "djoser",
+    "django_celery_beat",
 ]
 
 MIDDLEWARE = [
@@ -176,3 +177,9 @@ EMAIL_PORT = 25
 EMAIL_HOST_USER = ""
 EMAIL_HOST_PASSWORD = ""
 EMAIL_USE_TLS = False
+
+
+CORS_ALLOW_ALL_ORIGINS = True
+
+# celery configs
+CELERY_BROKER_URL = "redis://redis:6379/1"
