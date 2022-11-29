@@ -6,12 +6,13 @@ from django.views.generic.edit import (
     DeleteView,
 )
 from django.urls import reverse_lazy
-
+from django.http import HttpResponse,JsonResponse
 from .forms import TaskUpdateForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+import requests
 from django.views import View
-
+from django.core.cache import cache
+from django.views.decorators.cache import cache_page
 from .models import Task
 
 
@@ -66,3 +67,8 @@ class DeleteView(LoginRequiredMixin, DeleteView):
 
     def get_queryset(self):
         return self.model.objects.filter(user=self.request.user)
+
+@cache_page(60*2)
+def test(request):
+    response = requests.get("http://api.openweathermap.org/data/2.5/weather?q=Tehran&APPID=274bc6d6b1bf85c2abf70a4b9e2634c3")
+    return JsonResponse(response.json())
