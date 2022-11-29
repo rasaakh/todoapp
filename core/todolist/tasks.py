@@ -11,7 +11,3 @@ def remove_completed_tasks():
 # def remove_tasks():
 #     Task.objects.all().delete()
 
-
-# @shared_task
-# def test():
-#    print("send test")
