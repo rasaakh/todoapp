@@ -22,3 +22,5 @@ celery
 redis
 django-redis
 django-celery-beat
+# deployment
+gunicorn

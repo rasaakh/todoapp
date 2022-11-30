@@ -1,4 +1,6 @@
 from django.urls import path, include
+# from .views import CustomLoginView,RegisterPage
+# from django.contrib.auth.views import LogoutView
 
 app_name = "accounts"
 

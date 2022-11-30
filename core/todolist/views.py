@@ -16,7 +16,7 @@ from django.views.decorators.cache import cache_page
 from .models import Task
 
 
-class TaskList(LoginRequiredMixin, ListView):
+class TaskList(ListView):
     model = Task
     context_object_name = "tasks"
     template_name = "base.html"
