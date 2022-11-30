@@ -1,9 +1,11 @@
 import os
-import django
-from celery import Celery
-from todolist.tasks import remove_completed_tasks
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "todoapp.settings")
 
+import django
 django.setup()
+
+from celery import Celery
+
 
 # Set the default Django settings module for the 'celery' program.
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "todoapp.settings")
@@ -19,9 +21,8 @@ app.config_from_object("django.conf:settings", namespace="CELERY")
 # Load task modules from all registered Django apps.
 app.autodiscover_tasks()
 
+from todolist.tasks import remove_completed_tasks
 
 @app.on_after_configure.connect
 def setup_periodic_tasks(sender, **kwargs):
-    sender.add_periodic_task(
-        600.0, remove_completed_tasks.s(), name="Remove Tasks every 10 minutes"
-    )
+    sender.add_periodic_task(600.0, remove_completed_tasks.s(), name='Remove Tasks every 10 minutes')
