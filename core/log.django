@@ -204,3 +204,941 @@ Traceback (most recent call last):
     raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
 django.template.exceptions.TemplateDoesNotExist: todolist/task_form.html
 ERROR 2022-12-05 12:10:48,748 django.server.log_message:161- "POST /create/ HTTP/1.1" 500 89577
+ERROR 2022-12-05 13:49:58,779 django.request.log_response:224- Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/list.py", line 142, in get
+    self.object_list = self.get_queryset()
+  File "/app/todolist/views.py", line 24, in get_queryset
+    return self.model.objects.filter(user=self.request.user)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1416, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1435, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1343, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1172, in check_related_objects
+    for v in value:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR 2022-12-05 13:49:58,873 django.server.log_message:161- "GET / HTTP/1.1" 500 131122
+ERROR 2022-12-05 13:52:04,228 django.request.log_response:224- Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/list.py", line 142, in get
+    self.object_list = self.get_queryset()
+  File "/app/todolist/views.py", line 24, in get_queryset
+    return self.model.objects.filter(user=self.request.user)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1416, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1435, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1343, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1172, in check_related_objects
+    for v in value:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR 2022-12-05 13:52:04,308 django.server.log_message:161- "GET / HTTP/1.1" 500 130903
+ERROR 2022-12-05 13:54:28,592 django.request.log_response:224- Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "/usr/local/lib/python3.9/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/login.html
+ERROR 2022-12-05 13:54:28,632 django.server.log_message:161- "GET /accounts/login/ HTTP/1.1" 500 88625
+ERROR 2022-12-05 13:57:14,781 django.request.log_response:224- Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/usr/local/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/test/utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'register' not found. 'register' is not a valid view function or pattern name.
+ERROR 2022-12-05 13:57:14,832 django.server.log_message:161- "GET /accounts/login/ HTTP/1.1" 500 126067
+WARNING 2022-12-05 13:59:58,691 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 13:59:58,698 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 13:59:58,699 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 13:59:58,699 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 13:59:58,699 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 13:59:58,726 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 13:59:58,744 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 13:59:59,118 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+ERROR 2022-12-05 14:00:07,763 django.request.log_response:224- Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/debug.py", line 89, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/edit.py", line 142, in post
+    return self.form_valid(form)
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/views.py", line 93, in form_valid
+    return HttpResponseRedirect(self.get_success_url())
+  File "/usr/local/lib/python3.9/site-packages/django/http/response.py", line 503, in __init__
+    self['Location'] = iri_to_uri(redirect_to)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/encoding.py", line 146, in iri_to_uri
+    iri = str(iri)
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 140, in __text_cast
+    return func(*self.__args, **self.__kw)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'task_list' not found. 'task_list' is not a valid view function or pattern name.
+ERROR 2022-12-05 14:00:07,858 django.server.log_message:161- "POST /accounts/login/ HTTP/1.1" 500 142708
+WARNING 2022-12-05 14:01:47,045 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:01:47,053 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:01:47,062 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:01:47,077 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:01:47,078 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:01:47,088 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:01:47,112 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:01:47,133 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:06:55,559 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:06:55,566 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:06:55,566 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:06:55,580 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:06:55,589 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:06:55,617 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:06:55,656 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:06:55,656 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:07:02,861 django.request.log_response:224- Not Found: /favicon.ico
+WARNING 2022-12-05 14:07:02,862 django.server.log_message:161- "GET /favicon.ico HTTP/1.1" 404 14350
+WARNING 2022-12-05 14:12:58,839 django.request.log_response:224- Not Found: /login/
+WARNING 2022-12-05 14:12:58,840 django.server.log_message:161- "GET /login/ HTTP/1.1" 404 14330
+WARNING 2022-12-05 14:13:14,158 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:13:14,165 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:13:14,165 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:13:14,166 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:13:14,167 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:13:14,201 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:13:14,211 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+ERROR 2022-12-05 14:21:46,365 django.request.log_response:224- Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/list.py", line 142, in get
+    self.object_list = self.get_queryset()
+  File "/app/todolist/views.py", line 24, in get_queryset
+    return self.model.objects.filter(user=self.request.user)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1416, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1435, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1343, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1172, in check_related_objects
+    for v in value:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR 2022-12-05 14:21:46,450 django.server.log_message:161- "GET / HTTP/1.1" 500 130903
+WARNING 2022-12-05 14:21:46,575 django.request.log_response:224- Not Found: /favicon.ico
+WARNING 2022-12-05 14:21:46,576 django.server.log_message:161- "GET /favicon.ico HTTP/1.1" 404 14350
+WARNING 2022-12-05 14:24:17,601 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:24:17,603 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:24:17,604 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:24:17,604 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:24:17,605 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:24:17,642 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:24:17,658 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:24:17,674 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+ERROR 2022-12-05 14:33:03,019 django.request.log_response:224- Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/list.py", line 142, in get
+    self.object_list = self.get_queryset()
+  File "/app/todolist/views.py", line 24, in get_queryset
+    return self.model.objects.filter(user=self.request.user)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1416, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1435, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1343, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1172, in check_related_objects
+    for v in value:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR 2022-12-05 14:33:03,122 django.server.log_message:161- "GET / HTTP/1.1" 500 130903
+WARNING 2022-12-05 14:33:03,303 django.request.log_response:224- Not Found: /favicon.ico
+WARNING 2022-12-05 14:33:03,304 django.server.log_message:161- "GET /favicon.ico HTTP/1.1" 404 14351
+WARNING 2022-12-05 14:33:18,450 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:33:18,463 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:33:18,470 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:33:18,474 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:33:18,474 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:33:18,491 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:33:18,511 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:33:18,525 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:33:23,286 django.request.log_response:224- Not Found: /favicon.ico
+WARNING 2022-12-05 14:33:23,291 django.server.log_message:161- "GET /favicon.ico HTTP/1.1" 404 14350
+WARNING 2022-12-05 14:34:19,745 django.request.log_response:224- Not Found: /favicon.ico
+WARNING 2022-12-05 14:34:19,745 django.server.log_message:161- "GET /favicon.ico HTTP/1.1" 404 14350
+WARNING 2022-12-05 14:35:44,809 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:35:44,814 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:35:44,820 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:35:44,824 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:35:44,833 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:35:44,864 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:35:44,872 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:35:44,892 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+ERROR 2022-12-05 14:36:08,777 django.request.log_response:224- Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 175, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 170, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 374, in full_clean
+    self._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/forms.py", line 117, in _post_clean
+    super()._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/models.py", line 413, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1236, in full_clean
+    self.clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/models.py", line 371, in clean
+    self.email = self.__class__.objects.normalize_email(self.email)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 187, in __get__
+    raise AttributeError(
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'accounts.User'
+ERROR 2022-12-05 14:36:08,828 django.server.log_message:161- "POST /accounts/register/ HTTP/1.1" 500 114958
+WARNING 2022-12-05 14:36:09,124 django.request.log_response:224- Not Found: /favicon.ico
+WARNING 2022-12-05 14:36:09,125 django.server.log_message:161- "GET /favicon.ico HTTP/1.1" 404 14350
+WARNING 2022-12-05 14:40:51,548 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:40:51,553 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:40:51,553 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:40:51,555 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:40:51,555 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:40:51,593 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:40:51,626 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:40:51,649 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:40:56,304 django.request.log_response:224- Not Found: /favicon.ico
+WARNING 2022-12-05 14:40:56,306 django.server.log_message:161- "GET /favicon.ico HTTP/1.1" 404 14350
+WARNING 2022-12-05 14:50:29,945 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:50:29,951 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:50:29,953 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:50:29,953 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:50:29,954 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:50:29,987 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:50:30,016 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:50:30,033 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:50:30,048 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:50:47,723 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:50:47,728 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:50:47,733 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:50:47,733 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:50:47,733 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:50:47,764 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:50:47,782 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:50:47,799 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:50:47,815 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:50:50,422 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:50:50,426 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:50:50,444 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:50:50,444 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:50:50,445 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:50:50,470 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:50:50,490 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:50:50,512 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:56:34,725 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:56:34,751 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:56:34,760 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:56:34,764 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:56:34,764 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:56:34,813 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:56:34,826 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:56:34,853 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+ERROR 2022-12-05 14:57:13,585 django.request.log_response:224- Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/list.py", line 142, in get
+    self.object_list = self.get_queryset()
+  File "/app/todolist/views.py", line 24, in get_queryset
+    return self.model.objects.filter(user=self.request.user)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1416, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1435, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1343, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1172, in check_related_objects
+    for v in value:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR 2022-12-05 14:57:13,689 django.server.log_message:161- "GET / HTTP/1.1" 500 130903
+WARNING 2022-12-05 14:57:26,509 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:57:26,515 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:57:26,516 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 14:57:26,521 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 14:57:26,523 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:57:26,558 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 14:57:26,558 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 14:57:26,578 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 14:57:45,661 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+ERROR 2022-12-05 14:59:41,817 django.request.log_response:224- Internal Server Error: /update/17/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/usr/local/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/test/utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'update_task' not found. 'update_task' is not a valid view function or pattern name.
+ERROR 2022-12-05 14:59:41,917 django.server.log_message:161- "GET /update/17/ HTTP/1.1" 500 121175
+ERROR 2022-12-05 15:43:48,174 django.request.log_response:224- Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "/usr/local/lib/python3.9/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: accounts/login.html
+ERROR 2022-12-05 15:43:48,217 django.server.log_message:161- "GET /accounts/login/ HTTP/1.1" 500 88515
+WARNING 2022-12-05 15:46:46,491 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 15:46:46,493 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 15:46:46,499 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 15:46:46,501 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 15:46:46,501 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 15:46:46,528 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 15:46:46,550 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 15:46:46,566 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 15:46:46,581 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 15:48:54,599 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 15:48:54,602 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 15:48:54,610 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 15:48:54,617 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 15:48:54,630 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 15:48:54,638 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 15:48:54,669 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 15:48:54,685 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 15:49:48,396 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 15:49:48,430 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 15:49:48,431 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 15:49:48,431 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 15:49:48,431 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 15:49:48,456 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 15:49:48,487 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 15:49:48,517 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 15:49:48,534 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 15:50:20,683 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+ERROR 2022-12-05 15:58:17,432 django.request.log_response:224- Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    response = response.render()
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 105, in render
+    self.content = self.rendered_content
+  File "/usr/local/lib/python3.9/site-packages/django/template/response.py", line 83, in rendered_content
+    return template.render(context, self._request)
+  File "/usr/local/lib/python3.9/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/base.py", line 170, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/test/utils.py", line 100, in instrumented_test_render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/base.py", line 938, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/base.py", line 905, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.9/site-packages/django/template/defaulttags.py", line 449, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/base.py", line 86, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/urls/resolvers.py", line 698, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'signup' not found. 'signup' is not a valid view function or pattern name.
+ERROR 2022-12-05 15:58:17,481 django.server.log_message:161- "GET /accounts/login/ HTTP/1.1" 500 123313
+WARNING 2022-12-05 15:58:52,561 django.server.log_message:161- "GET /static/css/bootstrap.css HTTP/1.1" 404 1911
+WARNING 2022-12-05 15:58:52,562 django.server.log_message:161- "GET /static/css/signin.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 15:58:52,586 django.server.log_message:161- "GET /static/img/logo-invert.png HTTP/1.1" 404 1917
+WARNING 2022-12-05 16:00:07,497 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:00:07,497 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:00:07,498 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:00:07,499 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:00:07,499 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:00:07,551 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:00:07,561 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:00:07,579 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:05:19,530 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:05:19,542 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:05:19,543 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:05:19,563 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:05:19,579 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:05:19,616 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:05:19,920 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:05:22,155 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:05:22,170 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:05:22,172 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:05:22,172 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:05:22,178 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:05:22,248 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:05:22,253 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:05:22,277 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:05:22,300 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+ERROR 2022-12-05 16:05:44,064 django.request.log_response:224- Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 175, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 170, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 374, in full_clean
+    self._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/forms.py", line 117, in _post_clean
+    super()._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/models.py", line 413, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1236, in full_clean
+    self.clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/models.py", line 371, in clean
+    self.email = self.__class__.objects.normalize_email(self.email)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 187, in __get__
+    raise AttributeError(
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'accounts.User'
+ERROR 2022-12-05 16:05:44,115 django.server.log_message:161- "POST /accounts/register/ HTTP/1.1" 500 114955
+WARNING 2022-12-05 16:10:17,414 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:10:17,429 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:10:17,439 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:10:17,461 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:10:17,472 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:10:17,509 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:10:17,510 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:10:17,537 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:10:17,553 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:10:17,623 django.request.log_response:224- Not Found: /favicon.ico
+WARNING 2022-12-05 16:10:17,627 django.server.log_message:161- "GET /favicon.ico HTTP/1.1" 404 14350
+ERROR 2022-12-05 16:10:32,182 django.request.log_response:224- Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 175, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 170, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 374, in full_clean
+    self._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/forms.py", line 117, in _post_clean
+    super()._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/models.py", line 413, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1236, in full_clean
+    self.clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/models.py", line 371, in clean
+    self.email = self.__class__.objects.normalize_email(self.email)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 187, in __get__
+    raise AttributeError(
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'accounts.User'
+ERROR 2022-12-05 16:10:32,233 django.server.log_message:161- "POST /accounts/register/ HTTP/1.1" 500 114955
+ERROR 2022-12-05 16:30:26,389 django.request.log_response:224- Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/list.py", line 142, in get
+    self.object_list = self.get_queryset()
+  File "/app/todolist/views.py", line 24, in get_queryset
+    return self.model.objects.filter(user=self.request.user)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1416, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1435, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1343, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1172, in check_related_objects
+    for v in value:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR 2022-12-05 16:30:26,477 django.server.log_message:161- "GET / HTTP/1.1" 500 130836
+WARNING 2022-12-05 16:30:26,590 django.request.log_response:224- Not Found: /favicon.ico
+WARNING 2022-12-05 16:30:26,598 django.server.log_message:161- "GET /favicon.ico HTTP/1.1" 404 14350
+ERROR 2022-12-05 16:30:29,518 django.request.log_response:224- Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/list.py", line 142, in get
+    self.object_list = self.get_queryset()
+  File "/app/todolist/views.py", line 24, in get_queryset
+    return self.model.objects.filter(user=self.request.user)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1416, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1435, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1343, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1172, in check_related_objects
+    for v in value:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR 2022-12-05 16:30:29,570 django.server.log_message:161- "GET / HTTP/1.1" 500 130834
+WARNING 2022-12-05 16:30:40,277 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:30:40,291 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:30:40,291 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:30:40,294 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:30:40,295 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:30:40,340 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:30:40,354 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:30:40,370 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:30:40,387 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:30:45,341 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:30:45,343 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:30:45,345 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:30:45,346 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:30:45,346 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:30:45,391 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:30:45,408 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+ERROR 2022-12-05 16:31:05,430 django.request.log_response:224- Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 175, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 170, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 374, in full_clean
+    self._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/forms.py", line 117, in _post_clean
+    super()._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/models.py", line 413, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1236, in full_clean
+    self.clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/models.py", line 371, in clean
+    self.email = self.__class__.objects.normalize_email(self.email)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 187, in __get__
+    raise AttributeError(
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'accounts.User'
+ERROR 2022-12-05 16:31:05,505 django.server.log_message:161- "POST /accounts/register/ HTTP/1.1" 500 114952
+ERROR 2022-12-05 16:31:25,494 django.request.log_response:224- Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/list.py", line 142, in get
+    self.object_list = self.get_queryset()
+  File "/app/todolist/views.py", line 24, in get_queryset
+    return self.model.objects.filter(user=self.request.user)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1416, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1435, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1343, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1172, in check_related_objects
+    for v in value:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR 2022-12-05 16:31:25,583 django.server.log_message:161- "GET / HTTP/1.1" 500 130835
+WARNING 2022-12-05 16:31:37,461 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:31:37,465 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:31:37,467 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:31:37,468 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:31:37,468 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:31:37,506 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:31:37,523 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:31:37,542 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:31:44,160 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:31:44,170 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:31:44,173 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:31:44,175 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:31:44,175 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:31:44,207 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:31:44,231 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:31:44,256 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:32:05,978 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:32:06,015 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:32:06,019 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:32:06,029 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:32:06,030 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:32:06,034 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:32:06,066 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:32:06,086 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+ERROR 2022-12-05 16:32:35,571 django.request.log_response:224- Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 175, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 170, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 374, in full_clean
+    self._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/forms.py", line 117, in _post_clean
+    super()._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/models.py", line 413, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1236, in full_clean
+    self.clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/models.py", line 371, in clean
+    self.email = self.__class__.objects.normalize_email(self.email)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 187, in __get__
+    raise AttributeError(
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'accounts.User'
+ERROR 2022-12-05 16:32:35,650 django.server.log_message:161- "POST /accounts/register/ HTTP/1.1" 500 114956
+ERROR 2022-12-05 16:34:45,018 django.request.log_response:224- Internal Server Error: /
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/list.py", line 142, in get
+    self.object_list = self.get_queryset()
+  File "/app/todolist/views.py", line 24, in get_queryset
+    return self.model.objects.filter(user=self.request.user)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1416, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1435, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1343, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1172, in check_related_objects
+    for v in value:
+  File "/usr/local/lib/python3.9/site-packages/django/utils/functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+TypeError: 'AnonymousUser' object is not iterable
+ERROR 2022-12-05 16:34:45,108 django.server.log_message:161- "GET / HTTP/1.1" 500 130835
+WARNING 2022-12-05 16:34:54,545 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:34:54,545 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:34:54,547 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:34:54,548 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:34:54,548 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:34:54,591 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:34:54,600 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:34:54,623 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:34:56,879 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:34:56,880 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:34:56,882 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:34:56,887 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:34:56,888 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:34:56,932 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:34:56,939 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:34:56,963 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+ERROR 2022-12-05 16:35:12,901 django.request.log_response:224- Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 175, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 170, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 374, in full_clean
+    self._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/forms.py", line 117, in _post_clean
+    super()._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/models.py", line 413, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1236, in full_clean
+    self.clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/models.py", line 371, in clean
+    self.email = self.__class__.objects.normalize_email(self.email)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 187, in __get__
+    raise AttributeError(
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'accounts.User'
+ERROR 2022-12-05 16:35:12,956 django.server.log_message:161- "POST /accounts/register/ HTTP/1.1" 500 114983
+WARNING 2022-12-05 16:35:22,925 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:35:24,331 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:42:17,201 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:42:17,202 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:42:17,204 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:42:17,206 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:42:17,236 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:42:17,233 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:42:19,032 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-05 16:42:19,043 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:42:19,045 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:42:19,062 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-05 16:42:19,064 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-05 16:42:19,078 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:42:19,104 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-05 16:42:19,121 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-05 16:42:19,140 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+ERROR 2022-12-05 16:42:30,641 django.request.log_response:224- Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 175, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 170, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 374, in full_clean
+    self._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/forms.py", line 117, in _post_clean
+    super()._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/models.py", line 413, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1236, in full_clean
+    self.clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/models.py", line 371, in clean
+    self.email = self.__class__.objects.normalize_email(self.email)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 187, in __get__
+    raise AttributeError(
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'accounts.User'
+ERROR 2022-12-05 16:42:30,697 django.server.log_message:161- "POST /accounts/register/ HTTP/1.1" 500 114952
+WARNING 2022-12-05 16:45:23,818 django.request.log_response:224- Not Found: /accounts/c
+WARNING 2022-12-05 16:45:23,819 django.server.log_message:161- "GET /accounts/c HTTP/1.1" 404 17049
+WARNING 2022-12-05 16:49:01,975 django.request.log_response:224- Not Found: /accounts/c
+WARNING 2022-12-05 16:49:01,975 django.server.log_message:161- "GET /accounts/c HTTP/1.1" 404 17049

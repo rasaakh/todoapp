@@ -81,8 +81,8 @@ if settings.SHOW_SWAGGER:
         ),
     ]
 
-# handler400 = "core.error_views.error_400"  # bad_request
-# handler403 = "core.error_views.error_403"  # permission_denied
-# handler404 = "core.error_views.error_404"  # page_not_found
-# handler500 = "core.error_views.error_500"  # server_error
+handler400 = "todoapp.error_views.error_400"  # bad_request
+handler403 = "todoapp.error_views.error_403"  # permission_denied
+handler404 = "todoapp.error_views.error_404"  # page_not_found
+handler500 = "todoapp.error_views.error_500"  # server_error
  

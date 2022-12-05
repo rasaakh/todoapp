@@ -3,13 +3,19 @@ from django.contrib.auth.views import LoginView
 from django.views.generic.edit import FormView
 from django.urls import reverse_lazy
 from django.contrib.auth import login
-from accounts.models import User
+# from accounts.models import User
 from django.shortcuts import redirect
+from django.views.generic import TemplateView
 
 # Create your views here.
-# from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model
 
-# User = get_user_model()
+from django.shortcuts import redirect
+
+
+
+
+User = get_user_model()
 
 
 class CustomLoginView(LoginView):
@@ -18,7 +24,7 @@ class CustomLoginView(LoginView):
     redirect_authenticated_user = True
 
     def get_success_url(self):
-        return reverse_lazy("task_list")
+        return reverse_lazy("todolist:task_list")
 
     class Meta:
         model = User
@@ -29,10 +35,11 @@ class RegisterPage(FormView):
 
     form_class = UserCreationForm
     redirect_authenticated_user = True
-    success_url = reverse_lazy("task_list")
+    success_url = reverse_lazy("todolist:task_list")
 
     class Meta:
         model = User
+        
         # fields = ("email", "password1", "password2")
 
     def form_valid(self, form):
@@ -43,5 +50,8 @@ class RegisterPage(FormView):
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
-            return redirect("task_list")
+            return redirect("todolist:task_list")
         return super(RegisterPage, self).get(*args, **kwargs)
+    
+    
+

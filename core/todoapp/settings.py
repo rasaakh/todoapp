@@ -224,7 +224,7 @@ if config("USE_SSL_CONFIG", cast=bool, default=False):
     # USE_X_FORWARDED_HOST = True
     # SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
-LOGIN_URL = "/accounts/login"
+# LOGIN_URL = "/accounts/login"
 
 AUTH_USER_MODEL = "accounts.User"
 

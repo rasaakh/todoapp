@@ -24,6 +24,3 @@ class TaskSerializer(serializers.ModelSerializer):
         validated_data["user"] = self.context.get("request").user
         return super().create(validated_data)
     
-    
-class WeatherSerializer(serializers.ModelSerializer):
-      pass
