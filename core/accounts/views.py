@@ -24,7 +24,7 @@ class CustomLoginView(LoginView):
     redirect_authenticated_user = True
 
     def get_success_url(self):
-        return reverse_lazy("todolist:task_list")
+        return reverse_lazy("todolist:task_list_user")
 
     class Meta:
         model = User
@@ -35,7 +35,7 @@ class RegisterPage(FormView):
 
     form_class = UserCreationForm
     redirect_authenticated_user = True
-    success_url = reverse_lazy("todolist:task_list")
+    success_url = reverse_lazy("todolist:task_list_user")
 
     class Meta:
         model = User
@@ -50,7 +50,7 @@ class RegisterPage(FormView):
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
-            return redirect("todolist:task_list")
+            return redirect("todolist:task_list_user")
         return super(RegisterPage, self).get(*args, **kwargs)
     
     
