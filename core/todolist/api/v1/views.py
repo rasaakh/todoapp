@@ -1,5 +1,5 @@
 # from rest_framework.response import Response
-from .serializers import TaskSerializer
+from .serializers import TaskSerializer,WeatherSerializer
 from ...models import Task
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
@@ -33,6 +33,7 @@ class TaskModelViewSet(viewsets.ModelViewSet):
 
 
 class WeatherApiView(generics.RetrieveAPIView):
+    serializer_class = WeatherSerializer
     @method_decorator(cache_page(timeout=60 * 20))
     def get(self, request, *args, **kwargs):
         response = requests.get(
