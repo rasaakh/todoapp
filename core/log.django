@@ -1638,3 +1638,5 @@ WARNING 2022-12-06 05:33:20,982 django.server.log_message:161- "GET /static/js1/
 WARNING 2022-12-06 05:33:20,990 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
 WARNING 2022-12-06 05:33:21,004 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
 WARNING 2022-12-06 05:33:21,017 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 06:43:54,065 django.request.log_response:224- Forbidden: /api/v1/task/
+WARNING 2022-12-06 06:43:54,436 django.request.log_response:224- Bad Request: /api/v1/task/

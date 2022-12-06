@@ -1,15 +1,12 @@
 import os
-import django
-from celery import Celery
-from todolist.tasks import remove_completed_tasks
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "todoapp.settings")
 
-
+import django
 
 django.setup()
 
-
+from celery import Celery
 
 
 # Set the default Django settings module for the 'celery' program.
