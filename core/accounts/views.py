@@ -11,7 +11,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth import get_user_model
 
 from django.shortcuts import redirect
-
+from .forms import SignUpForm
 
 
 
@@ -33,14 +33,14 @@ class CustomLoginView(LoginView):
 class RegisterPage(FormView):
     template_name = "accounts/register.html"
 
-    form_class = UserCreationForm
+    form_class = SignUpForm
     redirect_authenticated_user = True
     success_url = reverse_lazy("todolist:task_list_user")
 
     class Meta:
         model = User
         
-        # fields = ("email", "password1", "password2")
+        fields = ("email", "password1", "password2")
 
     def form_valid(self, form):
         user = form.save()

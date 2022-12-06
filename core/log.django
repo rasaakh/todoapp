@@ -1506,3 +1506,135 @@ WARNING 2022-12-05 18:34:27,563 django.server.log_message:161- "GET /static/imag
 WARNING 2022-12-05 18:34:27,585 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
 WARNING 2022-12-05 18:34:27,606 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
 WARNING 2022-12-05 18:34:27,625 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:15:33,187 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-06 05:15:33,190 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-06 05:15:33,190 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:15:33,190 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:15:33,192 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:15:33,215 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:15:33,215 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:15:33,230 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:15:35,436 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-06 05:15:35,453 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:15:35,455 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:15:35,455 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-06 05:15:35,465 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:15:35,470 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:15:35,480 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:15:35,493 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:15:35,505 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+ERROR 2022-12-06 05:15:53,146 django.request.log_response:224- Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 175, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 170, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 374, in full_clean
+    self._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/forms.py", line 117, in _post_clean
+    super()._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/models.py", line 413, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1236, in full_clean
+    self.clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/models.py", line 371, in clean
+    self.email = self.__class__.objects.normalize_email(self.email)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 187, in __get__
+    raise AttributeError(
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'accounts.User'
+ERROR 2022-12-06 05:15:53,198 django.server.log_message:161- "POST /accounts/register/ HTTP/1.1" 500 114933
+WARNING 2022-12-06 05:16:11,708 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+ERROR 2022-12-06 05:16:32,405 django.request.log_response:224- Internal Server Error: /accounts/register/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 175, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 170, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/forms.py", line 374, in full_clean
+    self._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/forms.py", line 117, in _post_clean
+    super()._post_clean()
+  File "/usr/local/lib/python3.9/site-packages/django/forms/models.py", line 413, in _post_clean
+    self.instance.full_clean(exclude=exclude, validate_unique=False)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/base.py", line 1236, in full_clean
+    self.clean()
+  File "/usr/local/lib/python3.9/site-packages/django/contrib/auth/models.py", line 371, in clean
+    self.email = self.__class__.objects.normalize_email(self.email)
+  File "/usr/local/lib/python3.9/site-packages/django/db/models/manager.py", line 187, in __get__
+    raise AttributeError(
+AttributeError: Manager isn't available; 'auth.User' has been swapped for 'accounts.User'
+ERROR 2022-12-06 05:16:32,431 django.server.log_message:161- "POST /accounts/register/ HTTP/1.1" 500 114955
+WARNING 2022-12-06 05:29:17,406 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-06 05:29:17,412 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:29:17,413 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:29:17,415 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:29:17,423 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-06 05:29:17,467 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:29:17,478 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:29:17,498 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:29:19,789 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-06 05:29:19,799 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-06 05:29:19,800 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:29:19,801 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:29:19,802 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:29:19,828 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:29:19,856 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:29:41,626 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-06 05:29:41,633 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:29:41,645 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-06 05:29:41,651 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:29:41,654 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:29:41,685 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:29:41,686 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:29:41,711 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:30:12,302 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-06 05:30:12,303 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-06 05:30:12,310 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:30:12,313 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:30:12,313 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:30:12,343 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:30:12,347 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:30:12,367 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:31:05,603 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-06 05:31:05,621 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:31:05,621 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:31:05,621 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:31:05,622 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-06 05:31:05,661 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:31:29,984 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-06 05:31:30,000 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-06 05:31:30,000 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:31:30,001 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:31:30,001 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:31:30,028 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:31:30,044 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:31:30,063 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:33:20,936 django.server.log_message:161- "GET /static/css1/style.css HTTP/1.1" 404 1902
+WARNING 2022-12-06 05:33:20,937 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:33:20,941 django.server.log_message:161- "GET /static/js1/jquery.min.js HTTP/1.1" 404 1911
+WARNING 2022-12-06 05:33:20,944 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
+WARNING 2022-12-06 05:33:20,948 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:33:20,982 django.server.log_message:161- "GET /static/js1/popper.js HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:33:20,990 django.server.log_message:161- "GET /static/images/bg.jpg HTTP/1.1" 404 1899
+WARNING 2022-12-06 05:33:21,004 django.server.log_message:161- "GET /static/js1/bootstrap.min.js HTTP/1.1" 404 1920
+WARNING 2022-12-06 05:33:21,017 django.server.log_message:161- "GET /static/js1/main.js HTTP/1.1" 404 1893
