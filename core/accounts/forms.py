@@ -10,4 +10,4 @@ class SignUpForm(UserCreationForm):
     # here is the important part.. add a class Meta-
     class Meta:
         model = User
-        fields = ("username", "password1", "password2")
+        fields = ("email", "password1", "password2")

@@ -1,4 +1,6 @@
 
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -12,7 +14,7 @@
         <div style="margin-top: 50px;" class="ui container">
             <h1 class="ui center aligned header">Django ToDo App</h1>
            
-            <form class="ui form" action="{% url 'create_task' %}" method="post">
+            <form class="ui form" action="{% url 'todolist:create_task' %}" method="post">
                 {% csrf_token %}
                 <div class="field">
                     <label>Todo Title</label>
@@ -21,21 +23,22 @@
                 </div>
                 <button class="ui blue button" type="submit">Add</button>
                 <a class="ui red button" href="{% url 'accounts:logout' %}">Logout</a>
+              
+                <a class="ui blue button" href="{% url 'accounts:login' %}">login</a>
             </form>
 
             <hr>
-          
             {% for todo in tasks %} 
             <div class="ui segment">
                 
                 <p class="ui big header">{{ todo.id }} | {{ todo.title }}</p>
-
+    
                 {% if todo.complete == False %}
                 <span class="ui gray label">Not Complete</span>
                 {% else %}
                 <span class="ui green label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Complete&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
                 {% endif %}
-
+    
                 <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
                 <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
                 <a>Complete</a>
@@ -45,12 +48,13 @@
                 <a class="ui red button" href="/complete/{{ todo.id }}">OFF</a>
                 {% endif %}
                
-
+    
             </div>
             {% endfor %}
-
+    
+    
         </div>
-
+        
 
     </body>
 

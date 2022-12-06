@@ -6,19 +6,29 @@ from django.views.generic.edit import (
     DeleteView,
 )
 from django.urls import reverse_lazy
-
+from django.http import JsonResponse
 from .forms import TaskUpdateForm
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+import requests
 from django.views import View
-
+from django.views.decorators.cache import cache_page
 from .models import Task
 
 
-class TaskList(LoginRequiredMixin, ListView):
+class TaskListAll(ListView):
+    model = Task
+    context_object_name = "tasks"
+    template_name = "index.html"
+
+    # def get_queryset(self):
+    #     return self.model.objects.filter(user=self.request.user)
+
+
+class TaskListUser(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = "tasks"
     template_name = "base.html"
+    success_url = reverse_lazy("todolist:task_list_user")
 
     def get_queryset(self):
         return self.model.objects.filter(user=self.request.user)
@@ -27,7 +37,7 @@ class TaskList(LoginRequiredMixin, ListView):
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
     fields = ["title"]
-    success_url = reverse_lazy("task_list")
+    success_url = reverse_lazy("todolist:task_list_user")
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -36,7 +46,7 @@ class TaskCreate(LoginRequiredMixin, CreateView):
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
-    success_url = reverse_lazy("task_list")
+    success_url = reverse_lazy("todolist:task_list_user")
     form_class = TaskUpdateForm
 
     template_name = "todo/update_task.html"
@@ -44,7 +54,7 @@ class TaskUpdate(LoginRequiredMixin, UpdateView):
 
 class TaskComplete(LoginRequiredMixin, View):
     model = Task
-    success_url = reverse_lazy("task_list")
+    success_url = reverse_lazy("todolist:task_list_user")
 
     def get(self, request, *args, **kwargs):
         object = Task.objects.get(id=kwargs.get("pk"))
@@ -59,10 +69,18 @@ class TaskComplete(LoginRequiredMixin, View):
 class DeleteView(LoginRequiredMixin, DeleteView):
     model = Task
     context_object_name = "task"
-    success_url = reverse_lazy("task_list")
+    success_url = reverse_lazy("todolist:task_list_user")
 
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
 
     def get_queryset(self):
         return self.model.objects.filter(user=self.request.user)
+
+
+@cache_page(60 * 2)
+def test(request):
+    response = requests.get(
+        "http://api.openweathermap.org/data/2.5/weather?q=Tehran&APPID=274bc6d6b1bf85c2abf70a4b9e2634c3"
+    )
+    return JsonResponse(response.json())

@@ -1,18 +1,44 @@
-Django>=3.2,<3.3
-python-decouple
-
+# general  modules
+django >3.2,<3.3
 Pillow
 djangorestframework
+
+# env controlls
+python-decouple
+
+# third party modules
 markdown       
 django-filter  
-coreapi 
 drf-yasg[validation]
 djangorestframework-simplejwt
-django-mail-templated
-djoser
+django-cors-headers
+django-robots
+django-debug-toolbar
+
+# deployment module
+gunicorn
+
+# refactoring and tests
 black
-flake8-django
 flake8
-dj-rest-auth
+flake8-django
 pytest
 pytest-django
+Faker
+dj-rest-auth
+
+# background proccess and cache
+redis
+celery
+django-redis
+django-celery-beat
+
+# database client
+psycopg2-binary
+
+
+# email & djoser
+coreapi 
+django-mail-templated
+djoser
+
