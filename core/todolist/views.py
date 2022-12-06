@@ -22,9 +22,9 @@ class TaskListAll(ListView):
 
     # def get_queryset(self):
     #     return self.model.objects.filter(user=self.request.user)
-    
-       
-class TaskListUser(LoginRequiredMixin,ListView):
+
+
+class TaskListUser(LoginRequiredMixin, ListView):
     model = Task
     context_object_name = "tasks"
     template_name = "base.html"
@@ -32,8 +32,8 @@ class TaskListUser(LoginRequiredMixin,ListView):
 
     def get_queryset(self):
         return self.model.objects.filter(user=self.request.user)
-    
-       
+
+
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
     fields = ["title"]

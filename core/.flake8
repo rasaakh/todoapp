@@ -13,3 +13,4 @@ exclude =
 
 ignore =
     E501
+    DJ01

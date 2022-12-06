@@ -40,30 +40,27 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("todolist.urls")),
     path("accounts/", include("accounts.urls")),
-   
 ]
-    
+
 
 if settings.COMINGSOON:
     urlpatterns.insert(
         0, re_path(r"^", TemplateView.as_view(template_name="comingsoon.html"))
     )
-    
+
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL,
-                          document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
-    
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 
 if settings.SHOW_DEBUGGER_TOOLBAR:
-    urlpatterns += [path('__debug__/', include('debug_toolbar.urls')),
-                    ]
+    urlpatterns += [
+        path("__debug__/", include("debug_toolbar.urls")),
+    ]
 
 if settings.SHOW_SWAGGER:
     urlpatterns += [
-        path("api-auth/", include("rest_framework.urls",
-                                  namespace="rest_framework")),
+        path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
         path(
             "swagger/api.json",
             schema_view.without_ui(cache_timeout=0),
@@ -85,4 +82,3 @@ handler400 = "todoapp.error_views.error_400"  # bad_request
 handler403 = "todoapp.error_views.error_403"  # permission_denied
 handler404 = "todoapp.error_views.error_404"  # page_not_found
 handler500 = "todoapp.error_views.error_500"  # server_error
- 

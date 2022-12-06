@@ -33,7 +33,6 @@ class TaskModelViewSet(viewsets.ModelViewSet):
 
 
 class WeatherApiView(generics.RetrieveAPIView):
-    
     @method_decorator(cache_page(timeout=60 * 20))
     def get(self, request, *args, **kwargs):
         response = requests.get(

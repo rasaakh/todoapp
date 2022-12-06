@@ -7,12 +7,10 @@ from .views import (
     DeleteView,
     TaskListUser,
     test,
-    
 )
 
 app_name = "todolist"
 urlpatterns = [
-   
     path("", TaskListAll.as_view(), name="index"),
     path("task/", TaskListUser.as_view(), name="task_list_user"),
     path("create/", TaskCreate.as_view(), name="create_task"),
